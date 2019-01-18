@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+
+		<!-- 自动扫描 -->
+<!--         <context:component-scan base-package="com.fendo">
+            扫描时跳过 @Controller 注解的JAVA类（控制器）
+            <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        </context:component-scan> -->
+        
+        
+     <!-- 自动扫描与装配bean -->
+ 	<context:component-scan base-package="com.fendo"></context:component-scan>
+
+	<!-- 读取properties配置文件 -->
+    <bean
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:config.properties</value>
+            </list>
+
+        </property>
+    </bean> 
+    
+
+	<!-- 配置数据源c3p0 -->  
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">  
+        <property name="user" value="${username}"></property>  
+        <property name="password" value="${password}"></property>  
+        <property name="jdbcUrl" value="${url}"></property>  
+        <property name="driverClass" value="${driver_class}"></property>  
+          
+        <!-- 初始化池子大小 -->  
+        <property name="initialPoolSize" value="${initPoolSize}"></property>  
+          
+        <!-- 池子最大数 -->  
+        <property name="maxPoolSize" value="${maxPoolSize}"></property>  
+    </bean>  
+
+    <!-- Hibernate session factory -->
+     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+       <property name="dataSource" ref="dataSource"/>
+		<property name="packagesToScan" value="com.fendo" />
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+                <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+                <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+
+                <prop key="hibernate.jdbc.batch_size">${hibernate.jdbc.batch_size}</prop>
+                <prop key="hibernate.enable_lazy_load_no_trans">${hibernate.enable_lazy_load_no_trans}</prop>
+            </props>
+        </property>
+     </bean>   
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager"
+        class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean> 
+
+    <!-- 事务扫描开始(开启@Tranctional) -->
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/> 
+    
+</beans>

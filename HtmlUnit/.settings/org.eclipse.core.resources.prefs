@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/main/resources/chinese_stopword.dic=UTF-8
+encoding//src/main/resources/english_stopword.dic=UTF-8
+encoding//src/main/resources/ext.dic=UTF-8
+encoding//src/main/resources/stopword.dic=UTF-8

@@ -1,0 +1,198 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>FrameworkStudy</groupId>
+  <artifactId>SSH_Demo</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>SSH_Demo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+    <junit.version>4.12</junit.version>
+    <jstl.version>1.2</jstl.version>
+    <commons.version>1.2</commons.version>
+    <mysql.version>5.1.39</mysql.version>
+    <c3p0.version>0.9.2.1</c3p0.version>
+  	<hibernate.version>5.2.10.Final</hibernate.version>
+  	<hibernate.validator.version>5.4.0.Final</hibernate.validator.version>
+  	<spring.version>4.3.3.RELEASE</spring.version>
+  	<log.version>1.2.17</log.version>
+  </properties>
+ 
+  <dependencies>
+  <!-- ik分词start -->
+  <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
+<!-- <dependency>
+    <groupId>org.apache.lucene</groupId>
+    <artifactId>lucene-core</artifactId>
+    <version>4.7.2</version>
+</dependency>
+ <dependency>
+    <groupId>org.apache.lucene</groupId>
+    <artifactId>lucene-memory</artifactId>
+    <version>4.7.2</version>
+</dependency>
+ <dependency>
+    <groupId>org.apache.lucene</groupId>
+    <artifactId>lucene-highlighter</artifactId>
+    <version>4.7.2</version>
+</dependency>
+ https://mvnrepository.com/artifact/org.apache.lucene/lucene-analyzers
+<dependency>
+    <groupId>org.apache.lucene</groupId>
+    <artifactId>lucene-analyzers</artifactId>
+    <version>3.6.2</version>
+</dependency>
+ https://mvnrepository.com/artifact/com.janeluo/ikanalyzer
+<dependency>
+    <groupId>com.janeluo</groupId>
+    <artifactId>ikanalyzer</artifactId>
+    <version>2012_u6</version>
+</dependency> -->
+  <!-- ik分词end -->
+  
+  <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.44</version>
+</dependency>
+  
+  
+    <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.10.3</version>
+</dependency>
+
+ <!-- Elasticsearch核心依赖包 -->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>transport</artifactId>
+            <version>6.2.0</version>
+        </dependency>
+          
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>${junit.version}</version>
+
+	</dependency>
+	
+	<dependency>
+	    <groupId>jstl</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>${jstl.version}</version>
+	</dependency>
+
+	
+	<dependency>
+	    <groupId>commons-logging</groupId>
+	    <artifactId>commons-logging</artifactId>
+	    <version>${commons.version}</version>
+	</dependency>
+
+
+	<!-- Hibernate start -->
+	<dependency>
+	    <groupId>org.hibernate</groupId>
+	    <artifactId>hibernate-core</artifactId>
+	    <version>${hibernate.version}</version>
+	</dependency>
+	
+	 <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-validator</artifactId>
+          <version>${hibernate.validator.version}</version>
+      </dependency>
+      
+      <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+      </dependency>
+      
+	<!-- Hibernate end -->
+
+     <!-- 引用c3p0 依赖  start-->  
+     <dependency>  
+         <groupId>com.mchange</groupId>  
+         <artifactId>c3p0</artifactId>  
+         <version>${c3p0.version}</version>  
+     </dependency> 
+	<!-- 引用c3p0 依赖  end-->  
+
+	<!-- Mysql start -->
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>${mysql.version}</version>
+	</dependency>
+	<!-- Mysql end -->
+	
+	   <!-- Spring start -->
+	    <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+       
+	     <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        
+        <dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-context</artifactId>
+		    <version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>  
+		    <groupId>org.springframework</groupId>  
+		    <artifactId>spring-aop</artifactId>  
+		    <version>${spring.version}</version>  
+		</dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        
+       <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        
+       <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+	<!-- Spring end -->
+    
+    <!-- Log4j start -->  
+		<dependency>  
+		    <groupId>log4j</groupId>  
+		    <artifactId>log4j</artifactId>  
+		    <version>${log.version}</version>  
+		</dependency>  
+	<!-- Log4j end -->
+    
+     <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.3</version>
+    </dependency>    
+   
+  </dependencies>
+  <build>
+    <finalName>SSH_Demo</finalName>
+  </build>
+</project>
