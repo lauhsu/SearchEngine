@@ -1,7 +1,7 @@
 ## 文件说明
 - 1.Spider文件夹下为爬虫的Python代码
-- 2.SearchProject文件夹为搜索引擎代码的工程
-- 3.HtmlUnit文件夹为分词处理主程序
+- 2.SearchProject文件夹为搜索引擎代码的工程,Java代码
+- 3.HtmlUnit文件夹为分词处理主程序，Java代码
 - 4.TextClassification文件夹为网页内容分类工 程，采用机器学习方法
 - 5.news_model为网页文本分类的模型
 - 6.data.sql是mysql数据库文件，存储爬下来的网页数据
