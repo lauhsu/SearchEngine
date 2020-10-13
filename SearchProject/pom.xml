@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
   
   <properties>
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13.1</junit.version>
     <jstl.version>1.2</jstl.version>
     <commons.version>1.2</commons.version>
     <mysql.version>5.1.39</mysql.version>
